@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myimageapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myimageapp
+  template:
+    metadata:
+      labels:
+        app: myimageapp 
+    spec:
+      containers:
+        - name: myimageapp 
+          image: varshannlearn.azurecr.io/myimageapp
+          ports:
+          - containerPort: 8080
